@@ -88,12 +88,21 @@ body {
 
 #logo {
 	display: flex;
-	margin-top: 10px;
-	margin-left: 18%;
-	margin-right: auto;
-	width: auto;
-	height: 50px;
-	align-items: center;
+	margin-top: 1%;
+	margin-left: auto;
+	width: 78%;
+	min-width: 350px;
+	max-width: 900px;
+	font-size: 150%;
+	font-family: Trebuchet;
+}
+
+#weekly-calendar {
+	font-size: 120%;
+}
+
+#instructions {
+	font-size: 80%;
 }
 
 footer a:link, footer a:visited {
@@ -143,70 +152,18 @@ header a:link, header a:visited {
 	font-size: 100%;
 }
 
-.signup-container {
+.calendar-container {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 2%;
 	height: 100%;
-	min-height: 600px;
+	min-height: 300px;
 	width: 80%;
 	min-width: 350px;
 	max-width: 950px;
 	background-color: #25c0cd;
 }
 
-.signup-formContainerOuter {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 30px;
-}
-
-.signup-formContainerInner {
-	border: 1px solid #e2f9fc;
-	border-radius: 5px;
-	background-color: #8be5f0;
-	width: 100%;
-}
-
-.signup-table {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	font-size: 120%;
-}
-
-.signup-tableRow {
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	display: table-row;
-}
-
-.signup-tableLabel {
-	display: table-cell;
-	text-align: right;
-	vertical-align: middle;
-	padding: 15px;
-}
-
-.signup-tableLabel h1 {
-	display: table-cell;
-	text-align: right;
-	vertical-align: middle;
-	font-size: 150%;
-}
-
-.signup-tableInput {
-	display: table-cell;
-	text-align: left;
-	vertical-align: top;
-	padding-left: 15px;
-	padding-top: 10px;
-}
 
 .button-container {
 	width: 100%;

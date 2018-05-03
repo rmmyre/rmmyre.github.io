@@ -62,7 +62,6 @@
 		arrayOfTimeslotIDs: [],
 		dayBlockNumber: 1,
 		timeslotUniqueID: 1,
-		isTimeInputValid: false,
 		currentDate: "",
 
 		logDayBlockArray: function(){
@@ -123,28 +122,26 @@
 			return timeslot;
 		},
 		
-		addTimeslotToArray: function(){
-			var date = this.blockDate();;
+		addTimeslotToArrays: function(){
+			var slot = this.newTimeslot();
+			var day = slot.dateOfBlockDay;
+			this.timeslotArray.push(slot);
+			this.block1Array.push(day);
+		},
+		
+		createTimeslot: function(){
+			var date = this.blockDate();
 			
 			if(this.timeslotArray.length < 1){
 				this.dayBlockNumber = 1;
-				var slot = this.newTimeslot();
-				var day = slot.dateOfBlockDay;
-				this.timeslotArray.push(slot);
-				this.block1Array.push(day);
+				this.addTimeslotToArrays();
 			} else if(this.timeslotArray.length >= 1){
 				if(this.block1Array.indexOf(date) === -1){
 					this.dayBlockNumber = 1;
-					var slot = this.newTimeslot();
-					var day = slot.dateOfBlockDay;
-					this.timeslotArray.push(slot);
-					this.block1Array.push(day);
+					this.addTimeslotToArrays();
 				} else if (this.block1Array.indexOf(date) != -1 && this.block2Array.indexOf(date) === -1){
 					this.dayBlockNumber = 2;
-					var slot = this.newTimeslot();
-					var day = slot.dateOfBlockDay;
-					this.timeslotArray.push(slot);
-					this.block2Array.push(day);
+					this.addTimeslotToArrays();
 				}
 			}
 			console.log(this.timeslotArray);
@@ -191,7 +188,6 @@
 			if (!exp) {
 				throw new Error('Not a valid input: '+ time);
 			}
-			this.isTimeInputValid = true;
 			return exp;
 		},
 
@@ -259,26 +255,10 @@
 		//creates a new, formatted string from the user time input, for display
 		this.timeInputToString = function(time){
 			var hour = this.formatInputHours(time);
-			this.checkTimeInputLength();
 			var timeString = hour + ":" + this.timeInputMinutes(time);
 			console.log(timeString);
 			
 			return timeString;
-		};
-		
-		this.checkTimeInputLength = function(){
-			var isTimeLongEnough = false;
-			if (this.startTime < this.endTime){
-				var timeLength = this.startTime - this.endTime;
-				if (Math.abs(timeLength) < 2 || Math.abs(timeLength) > 24 ){
-					console.log("time input is too long or too short");
-				} else if (Math.abs(timeLength) >= 2 && Math.abs(timeLength) < 24){
-					console.log("time input is " + Math.abs(timeLength));
-					isTimeLongEnough = true;
-				}
-			} else {
-				console.log("start time is less than end time");
-			}
 		};
 		
 		//formats the hour portion of user time input
@@ -424,14 +404,8 @@
 		//close the modal when the user hits the submit button, and add a new timeslot to an array
 		(function(){
 			calendarDisplay.$submitButton.click(function(){
-				if(calendarDisplay.isTimeInputValid === false){
-					console.log("Please enter a time in the format HH:MM");
-					$("#timeInput-error").text("Please enter a time in the format HH:MM");
-				} else if (calendarDisplay.isTimeInputValid === true){
-					$("#timeInput-error").text("");
-				}
 				calendarDisplay.$modal.hide();
-				calendarDisplay.addTimeslotToArray();
+				calendarDisplay.createTimeslot();
 			});
 		})();
 
