@@ -1,0 +1,591 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+	background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none;
+}
+
+button:after {
+	border: none;
+}
+/*Styling for Set It Up pages*/
+
+.header {
+	background: linear-gradient(to bottom, #ffffff, #25c0cd 8%, #25c0cd) fixed;
+	background-repeat: no-repeat;
+	position: relative;
+	justify-content: flex-start;
+	display: flex;
+	height: 60px;
+	margin: 0px;
+}
+
+body {
+	background: linear-gradient(to top, #2e343d, #25c0cd 90%) fixed;
+	background-repeat: no-repeat;
+	color: black;
+	font-family: Trebuchet, "Lucida Grande", sans-serif;
+	font-size: medium;
+	margin: 0px;
+}
+
+#logo {
+	display: flex;
+	margin-top: 10px;
+	margin-left: 18%;
+	margin-right: auto;
+	width: auto;
+	height: 50px;
+	align-items: center;
+}
+
+footer a:link, footer a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+header a:link, header a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.login {
+	display: flex;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 2%;
+	right: 0px;
+	align-items: center;
+	font-size: 150%;
+}
+
+.user-login {
+	margin-right: 0px;
+	border: 1px solid black;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+}
+
+.help-nav {
+	border: 1px solid black;
+	background-color: #83fe80;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+}
+
+#welcome {
+	font-size: 170%;
+}
+
+#have-account {
+	font-size: 70%;
+	padding-right: 10px;
+}
+
+#create-profile {
+	font-size: 100%;
+}
+
+.signup-container {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 2%;
+	height: 100%;
+	min-height: 600px;
+	width: 80%;
+	min-width: 350px;
+	max-width: 950px;
+	background-color: #25c0cd;
+}
+
+.signup-formContainerOuter {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 30px;
+}
+
+.signup-formContainerInner {
+	border: 1px solid #e2f9fc;
+	border-radius: 5px;
+	background-color: #8be5f0;
+	width: 100%;
+}
+
+.signup-table {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 120%;
+}
+
+.signup-tableRow {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	display: table-row;
+}
+
+.signup-tableLabel {
+	display: table-cell;
+	text-align: right;
+	vertical-align: middle;
+	padding: 15px;
+}
+
+.signup-tableLabel h1 {
+	display: table-cell;
+	text-align: right;
+	vertical-align: middle;
+	font-size: 150%;
+}
+
+.signup-tableInput {
+	display: table-cell;
+	text-align: left;
+	vertical-align: top;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.button-container {
+	width: 100%;
+	display: flex-start;
+}
+
+.home-formContainerOuter {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 15px;
+}
+
+.calendar-ContainerInner {
+	width: 100%;
+	display: block;
+}
+
+.calendar-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	font-size: 100%;
+	width: 100%;
+}
+
+.calendar-cell {
+	display: flex;
+	background: linear-gradient(to bottom, white 0%, #25c0cd 20%);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3px;
+	border-radius: 5px;
+	width: 14%;
+	min-width: 75px;
+	height: 200px;
+	flex-wrap: wrap;
+	flex-direction:column;
+	justify-content: center;
+}
+
+.dateBlock-content {
+	display: none;
+	width: 100%;
+}
+
+.calendar-dateHeader1 {
+	display: flex;
+	width: 100%;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 3px;
+}
+
+.calendar-dateHeader2 {
+	display: flex;
+	width: 100%;
+	height: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 3px;
+}
+
+.calendar-dateBlock {
+	display: flex;
+	width: 100%;
+	border-radius: 5px;
+	background-color: #e2f9fc;
+	height: 45px;
+	margin-top: 5px;
+}
+
+.calendar-dateBlock-addButton {
+	display: flex;
+	width: 100%;
+	border-radius: 5px;
+	background-color: #e2f9fc;
+	height: 45px;
+	margin-top: 5px;
+}
+
+.home-formContainerInner {
+	border: 1px solid #e2f9fc;
+	border-radius: 5px;
+	background-color: #8be5f0;
+	width: 100%;
+}
+
+#timeInput-error {
+	position: relative;
+	font-size: 90%;
+	display: inline;
+	width: 150px;
+	color: red;
+}
+
+.time {
+	font-size: 90%;
+	margin-left: 3px;
+	margin-top: 3px;
+	margin-bottom: 5px;
+}
+
+.time-header {
+	font-size: 80%;
+	margin-left: 3px;
+	margin-top: 3px;
+	margin-bottom: 5px;
+}
+
+.calendar-details {
+	display: inline;
+	font-size: 80%;
+	margin-top: auto;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	width: 70%;
+}
+
+.calendar-button {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px;
+	background-color: #e2f9fc;
+	height: 45px;
+	color: #4deafb;
+	text-align: middle;
+}
+
+.calendar-button:hover {
+	background-color:#4deafb;
+	color: black;
+	border-radius: 5px;
+	border: 1px solid white;
+}
+
+.match-ContainerInner {
+	border-radius: 5px;
+	background-color: #8be5f0;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+	width: 100%;
+}
+
+.match-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	font-size: 100%;
+	width: 100%;
+}
+
+.match-cell {
+	display: flex;
+	background: linear-gradient(to bottom, white 0%, #25c0cd 20%);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3px;
+	border-radius: 5px;
+	width: 20%;
+	min-width: 200px;
+	min-height: 100px;
+	height: 200px;
+	flex-wrap: wrap;
+	flex-direction:column;
+	justify-content: center;
+}
+
+.home-link {
+	margin-left: 3px;
+	padding-top: 3px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #e2f9fc;
+    margin: auto;
+    padding: 5px 20px 20px 20px;
+    border: 1px solid #888;
+    width: 30%;
+	max-width: 300px;
+	min-width: 150px;
+	border-radius: 5px;
+}
+
+.modal-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	width: 30%;
+	display: table;
+}
+
+.modal-content h1 {
+	font-size: 150%;
+}
+
+.modal-row {
+	display: table-row;
+	padding-top: 15px;
+}
+
+.modal-content label {
+	display: table-cell;
+	padding: 5px;
+	text-align: right;
+}
+
+.modal-content input {
+	display: table-cell;
+	margin: 5px;
+}
+
+.modal-button{
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: 0px;
+	height: 40px;
+	width: 90px;
+	background-color: #ff3c8b;
+	border:none;
+	border-radius: 10px;
+	font-size: 150%;
+	color:white;
+	cursor: pointer;
+}
+
+.flex {
+	display: flex;
+}
+
+.modal-intro {
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+	font-size: 100%;
+	vertical-align: text-bottom;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+	display: flex;
+	width: 25%;
+	right: 0px;
+	margin-left: auto;
+	margin-top: 0px;
+	width: 30px;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete {
+    color: red;
+	display: inline;
+	width: 30px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 100%;
+	right: 0px;
+	bottom: 0px;
+	padding: 0px;
+	margin-left: 20px;
+	margin-right: 0px;
+	margin-top: 15px;
+}
+
+.delete:hover, .delete:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-time {
+	font-size: 40px;
+}
+
+#profiletext {
+	resize: none;
+}
+
+input#submit{
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: 0px;
+	height: 40px;
+	width: 110px;
+	background-color: #ff3c8b;
+	border:none;
+	border-radius: 10px;
+	font-size: 150%;
+	color:white;
+	cursor: pointer;
+	display: flex;
+}
+
+#finish-button{
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: 0px;
+	height: 40px;
+	width: 90px;
+	background-color: #ff3c8b;
+	border:none;
+	border-radius: 10px;
+	font-size: 150%;
+	color:white;
+	cursor: pointer;
+	display: flex;
+}
+
+.smalltext {
+	font-size: 70%;
+}
+
+.footer {
+	position: relative;
+	justify-content: flex-start;
+	display: flex;
+	font-size: 120%;
+	color: white;
+}
+
+.index-footer {
+	display: flex;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-left: 3%;
+	right: 0px;
+	align-items: center;
+	color: black;
+}
+
+.footer-nav {
+	display: flex;
+	flex-direction: ltr;
+	margin-right: 25px;
+	height: 50px;
+	align-items: center;
+}
+
+#copyright 	{
+	display: flex;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 2%;
+	right: 0px;
+	align-items: center;
+}
