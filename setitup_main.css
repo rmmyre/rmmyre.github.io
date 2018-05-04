@@ -251,18 +251,10 @@ header a:link, header a:visited {
 	margin-top: 5px;
 }
 
-.home-formContainerInner {
-	border: 1px solid #e2f9fc;
-	border-radius: 5px;
-	background-color: #8be5f0;
-	width: 100%;
-}
-
 #timeInput-error {
 	position: relative;
 	font-size: 90%;
 	display: inline;
-	width: 150px;
 	color: red;
 }
 
@@ -283,11 +275,8 @@ header a:link, header a:visited {
 .calendar-details {
 	display: inline;
 	font-size: 80%;
-	margin-top: auto;
 	margin-left: 3px;
 	margin-right: 3px;
-	margin-bottom: 3px;
-	width: 70%;
 }
 
 .calendar-button {
@@ -298,7 +287,7 @@ header a:link, header a:visited {
 	background-color: #e2f9fc;
 	height: 45px;
 	color: #4deafb;
-	text-align: middle;
+	text-align: center;
 }
 
 .calendar-button:hover {
@@ -306,43 +295,6 @@ header a:link, header a:visited {
 	color: black;
 	border-radius: 5px;
 	border: 1px solid white;
-}
-
-.match-ContainerInner {
-	border-radius: 5px;
-	background-color: #8be5f0;
-	margin-bottom: 15px;
-	padding-bottom: 5px;
-	width: 100%;
-}
-
-.match-wrap {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5px;
-	margin-bottom: 25px;
-	font-size: 100%;
-	width: 100%;
-}
-
-.match-cell {
-	display: flex;
-	background: linear-gradient(to bottom, white 0%, #25c0cd 20%);
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 3px;
-	border-radius: 5px;
-	width: 20%;
-	min-width: 200px;
-	min-height: 100px;
-	height: 200px;
-	flex-wrap: wrap;
-	flex-direction:column;
-	justify-content: center;
 }
 
 .home-link {
@@ -425,7 +377,6 @@ header a:link, header a:visited {
 .modal-intro {
 	display: inline;
 	padding: 0px;
-	margin: 0px;
 	font-size: 100%;
 	vertical-align: text-bottom;
 }
@@ -436,7 +387,6 @@ header a:link, header a:visited {
     font-size: 30px;
     font-weight: bold;
 	display: flex;
-	width: 25%;
 	right: 0px;
 	margin-left: auto;
 	margin-top: 0px;
@@ -452,8 +402,6 @@ header a:link, header a:visited {
 .delete {
     color: red;
 	display: inline;
-	width: 30px;
-	height: 30px;
 	font-weight: bold;
 	font-size: 100%;
 	right: 0px;
@@ -461,7 +409,6 @@ header a:link, header a:visited {
 	padding: 0px;
 	margin-left: 20px;
 	margin-right: 0px;
-	margin-top: 15px;
 }
 
 .delete:hover, .delete:focus {
@@ -478,7 +425,7 @@ header a:link, header a:visited {
 	resize: none;
 }
 
-input#submit{
+#submit{
 	margin-top: 2%;
 	margin-left: auto;
 	margin-right: 0px;
@@ -522,9 +469,8 @@ input#submit{
 
 .index-footer {
 	display: flex;
-	margin-left: auto;
 	margin-top: 10px;
-	margin-left: 3%;
+	margin-left: 1%;
 	right: 0px;
 	align-items: center;
 	color: black;
@@ -532,7 +478,6 @@ input#submit{
 
 .footer-nav {
 	display: flex;
-	flex-direction: ltr;
 	margin-right: 25px;
 	height: 50px;
 	align-items: center;
