@@ -1,8 +1,6 @@
 "use strict";
 
 (function($){
-	var current = null;
-
 	var epochTime = {
 		day: 86400,
 		newDate: new Date(),
