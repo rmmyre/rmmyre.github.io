@@ -116,27 +116,29 @@
 			return timeslot;
 		},
 		
-		addTimeslotToArrays: function(){
-			var slot = this.newTimeslot();
-			var day = slot.dateOfBlockDay;
-			this.timeslotArray.push(slot);
-			this.block1Array.push(day);
-		},
-		
 		createTimeslot: function(){
 			var date = this.blockDate();
 			
 			if(this.timeslotArray.length < 1){
 				this.dayBlockNumber = 1;
-				this.addTimeslotToArrays();
+				var slot = this.newTimeslot();
+				var day = slot.dateOfBlockDay;
+				this.timeslotArray.push(slot);
+				this.block1Array.push(day);
 			} else if(this.timeslotArray.length >= 1){
 				if(this.block1Array.indexOf(date) === -1){
 					this.dayBlockNumber = 1;
-					this.addTimeslotToArrays();
+					var slot = this.newTimeslot();
+					var day = slot.dateOfBlockDay;
+					this.timeslotArray.push(slot);
+					this.block1Array.push(day);
 				} else if (this.block1Array.indexOf(date) != -1 && this.block2Array.indexOf(date) === -1){
 					this.dayBlockNumber = 2;
-					this.addTimeslotToArrays();
-				}
+					var slot = this.newTimeslot();
+					var day = slot.dateOfBlockDay;
+					this.timeslotArray.push(slot);
+					this.block2Array.push(day);
+				} 
 			}
 			console.log(this.timeslotArray);
 			console.log(this.block1Array);
@@ -352,6 +354,11 @@
 				btnArray.push(btn);
 			}
 			return btnArray;
+		},
+		
+		//creates a date hmtl prefix
+		date: function(){
+			return $(this.html(this.prefix(), "date"));
 		},
 
 		header: function(number){
