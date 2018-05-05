@@ -353,16 +353,6 @@
 			}
 			return btnArray;
 		},
-		
-		//for future use
-		weekday: function(){
-			return $(this.html(this.prefix(), this.weekdayName));
-		},
-		
-		//for future use
-		date: function(){
-			return $(this.html(this.prefix(), "date"));
-		},
 
 		header: function(number){
 			return $(this.html(this.prefix(), this.number(number) + "-header"));
