@@ -48,10 +48,6 @@
 	}
 
 	var calendarDisplay = {
-		$submitButton: $("#time-submit"),
-		$deleteButton: $(".delete"),
-		$modal: $("#myModal"),
-		$closeButton: $("#closeButton"),
 		buttonPressed: 0,
 		numberForNewTimeslot: 1,
 		block1Array: [],
@@ -382,10 +378,14 @@
 	};
 
 	$(document).ready(function(){
+		var $submitButton = $("#time-submit");
+		var $modal = $("#myModal");
+		var $closeButton = $("#closeButton");
+		
 		//opens the modal and logs which "add" button was pushed, for use in adding blocks to the correct days
 		var showModal = function(btn, n){
 			$(btn).click(function(){
-				calendarDisplay.$modal.show();
+				$modal.show();
 				calendarDisplay.buttonPressed = n;
 				console.log("button pressed is " + calendarDisplay.buttonPressed);
 				$("#modalDisplayDate").text(" " + calendarDisplay.dateFormat(calendarDisplay.getBlockDateObject()) + " ")
@@ -394,15 +394,15 @@
 		
 		//close the modal when user hits the close button
 		(function(){
-			calendarDisplay.$closeButton.click(function(){
-				calendarDisplay.$modal.hide();
+			$closeButton.click(function(){
+				$modal.hide();
 			});
 		})();
 
 		//close the modal when the user hits the submit button, and add a new timeslot to an array
 		(function(){
-			calendarDisplay.$submitButton.click(function(){
-				calendarDisplay.$modal.hide();
+			$submitButton.click(function(){
+				$modal.hide();
 				calendarDisplay.createTimeslot();
 			});
 		})();
