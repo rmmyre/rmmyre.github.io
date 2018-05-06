@@ -46,6 +46,72 @@
 			return this.createDateObjects(this.epochDates());
 		}
 	}
+	
+	var blockID = {
+		dayName: "day",
+		blockName: "block",
+		weekdayName: "weekday",
+		addButtonID: "#addButton",
+
+		html: function(prefix, base){
+			var id = "#" + prefix + "-" + base;
+			return id;
+		},
+
+		numbered: function(id, n){
+			var name = id;
+			name = name + n;
+			return name;
+		},
+
+		prefix: function(){
+			return this.dayName + calendarDisplay.buttonPressed;
+		},
+
+		number: function(number){
+			console.log(this.blockName + number);
+			return this.blockName + number;
+		},
+
+		dateArray: function(){
+			var datesByID = [];
+			for (var i = 0; i < epochTime.weekLength; i++){
+				datesByID.push(this.html(this.numbered(this.dayName, i), "date"));
+			}
+			return datesByID;
+		},
+
+		weekdayArray: function(){
+			var weekdaysByID = [];
+			for (var i = 0; i < epochTime.weekLength; i++){
+				weekdaysByID.push(this.html(this.numbered(this.dayName, i), this.weekdayName));
+			}
+			return weekdaysByID;
+		},
+		
+		createButtonIDs: function(baseName){
+			var btnArray = [];
+			
+			for (var i = 0; i < epochTime.weekLength; i++){
+				var btn = baseName + i;
+				btnArray.push(btn);
+			}
+			return btnArray;
+		},
+		
+		//creates a date hmtl prefix
+		date: function(){
+			return $(this.html(this.prefix(), "date"));
+		},
+
+		header: function(number){
+			return $(this.html(this.prefix(), this.number(number) + "-header"));
+		},
+
+		details: function(number){
+			return $(this.html(this.prefix(), this.number(number) + "-Details"));
+		}
+	}
 
 	var calendarDisplay = {
 		buttonPressed: 0,
@@ -116,28 +182,24 @@
 			return timeslot;
 		},
 		
+		addTimeslotToArray: function(blockNumber){
+			this.dayBlockNumber = blockNumber;
+			var slot = this.newTimeslot();
+			var day = slot.dateOfBlockDay;
+			this.timeslotArray.push(slot);
+			return day	
+		},
+		
 		createTimeslot: function(){
 			var date = this.blockDate();
 			
 			if(this.timeslotArray.length < 1){
-				this.dayBlockNumber = 1;
-				var slot = this.newTimeslot();
-				var day = slot.dateOfBlockDay;
-				this.timeslotArray.push(slot);
-				this.block1Array.push(day);
+				this.block1Array.push(this.addTimeslotToArray(1));
 			} else if(this.timeslotArray.length >= 1){
 				if(this.block1Array.indexOf(date) === -1){
-					this.dayBlockNumber = 1;
-					var slot = this.newTimeslot();
-					var day = slot.dateOfBlockDay;
-					this.timeslotArray.push(slot);
-					this.block1Array.push(day);
+					this.block1Array.push(this.addTimeslotToArray(1));
 				} else if (this.block1Array.indexOf(date) != -1 && this.block2Array.indexOf(date) === -1){
-					this.dayBlockNumber = 2;
-					var slot = this.newTimeslot();
-					var day = slot.dateOfBlockDay;
-					this.timeslotArray.push(slot);
-					this.block2Array.push(day);
+					this.block2Array.push(this.addTimeslotToArray(2));
 				} 
 			}
 			console.log(this.timeslotArray);
@@ -303,72 +365,6 @@
 			});
 		};
 	};
-
-	var blockID = {
-		dayName: "day",
-		blockName: "block",
-		weekdayName: "weekday",
-		addButtonID: "#addButton",
-
-		html: function(prefix, base){
-			var id = "#" + prefix + "-" + base;
-			return id;
-		},
-
-		numbered: function(id, n){
-			var name = id;
-			name = name + n;
-			return name;
-		},
-
-		prefix: function(){
-			return this.dayName + calendarDisplay.buttonPressed;
-		},
-
-		number: function(number){
-			console.log(this.blockName + number);
-			return this.blockName + number;
-		},
-
-		dateArray: function(){
-			var datesByID = [];
-			for (var i = 0; i < epochTime.weekLength; i++){
-				datesByID.push(this.html(this.numbered(this.dayName, i), "date"));
-			}
-			return datesByID;
-		},
-
-		weekdayArray: function(){
-			var weekdaysByID = [];
-			for (var i = 0; i < epochTime.weekLength; i++){
-				weekdaysByID.push(this.html(this.numbered(this.dayName, i), this.weekdayName));
-			}
-			return weekdaysByID;
-		},
-		
-		createButtonIDs: function(baseName){
-			var btnArray = [];
-			
-			for (var i = 0; i < epochTime.weekLength; i++){
-				var btn = baseName + i;
-				btnArray.push(btn);
-			}
-			return btnArray;
-		},
-		
-		//creates a date hmtl prefix
-		date: function(){
-			return $(this.html(this.prefix(), "date"));
-		},
-
-		header: function(number){
-			return $(this.html(this.prefix(), this.number(number) + "-header"));
-		},
-
-		details: function(number){
-			return $(this.html(this.prefix(), this.number(number) + "-Details"));
-		}
-	}
 	
 	function init(){
 		calendarDisplay.displayCalendar();
