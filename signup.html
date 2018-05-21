@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Set It Up - Sign up</title>
+		<link rel="stylesheet" type="text/css" href="setitup_main.css">
+		<link rel='stylesheet' href='link.css' type='text/css' media="screen" /> 
+	</head>
+	<body>
+		<header class="header">
+			<img id="logo-file" src="images/Logo.png" alt="Set It Up">
+			<nav class ="login">
+				<p id="have-account">Have an account? </p>
+				<a href="login.html" class="user-login">Log In</a>
+				<!--<a href="" class="help-nav">Help</a>-->
+			</nav>
+		</header>
+		<form action="createprofile.php" method="post" id="form">
+		<div class="signup-container">
+			<div class="signup-formContainerOuter">
+				<div class="signup-formContainerInner">
+					<div class="signup-table">
+						<div class="signup-tableRow">
+							<label class="signup-tableLabel">First name: <br></label>
+							<span class="signup-tableInput"><input id="field" type="text" name="first_name" placeholder="First name" value=""><br></span>
+						</div>
+						<div class="signup-tableRow">
+							<label class="signup-tableLabel">Last name: <br></label>
+							<span class="signup-tableInput"><input type="text" name="last_name" placeholder="Last name" value=""><br><span>
+						</div>
+						<div class="signup-tableRow">
+							<label class="signup-tableLabel">Zipcode:<br></label>
+							<span class="signup-tableInput"><input type="text" name="zipcode" value="" placeholder="zipcode"><br></span>
+						</div>
+						<div class="signup-tableRow">
+							<label class="signup-tableLabel">Email address:</label>
+							<span class="signup-tableInput"><input type="email" name="email" value="" placeholder="email@youraddress.com"><br></span>
+						</div>
+						<div class="signup-tableRow">
+							<label class="signup-tableLabel">Password:</label>
+							<span class="signup-tableInput"><input type="password" name="password" value="" placeholder="8 characters"><br></pan>
+						</div>
+						<div class="signup-tableRow">
+							<label class="signup-tableLabel">Re-enter password:</label>
+							<span class="signup-tableInput"><input type="password" name="password" value=""><br></span>
+						</div>
+					</div><!--signup-table-->
+				</div><!--signup-formContainerInner-->
+				<div class="button-container">
+					<span class=""></span>
+					<span class="" id="continue">
+						<input type="submit" id="submit" value="Sign up!">
+					</span>
+						<input type="hidden" name="redirect" value="createprofile.html">
+				</div><!--button-container-->
+			</div><!--signup-formContainerOuter-->
+		</div><!--signup-container-->
+		</form>
+		<footer class="footer">
+			<nav class="index-footer" id="footer">
+				<a href="" class="footer-nav">About</a>
+				<a href="" class="footer-nav">Terms & Conditions</a>
+				<a href="" class="footer-nav">Privacy Policy</a>
+				<a href="" class="footer-nav">Dating Safety</a>
+				<a href="" class="footer-nav">Advertising</a>
+			</nav>
+		<span id="copyright">&copy; Rachel Myre 2018</span>
+		</footer>
+	</body>
+</html>
